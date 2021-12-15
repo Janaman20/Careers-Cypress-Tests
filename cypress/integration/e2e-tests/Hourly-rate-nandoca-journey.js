@@ -13,7 +13,7 @@ describe('Hourly Nandocas', function ()
             }
             )
                 
-        it('Verify Hourly Nandoca Journey', function () {
+        it('Verify Team Member page', function () {
           
 
                 cy.get('.button__BottomHalf-oyjxxm-2.jTtRLh.button-cta').contains('Team Member').click() // open team member page                
@@ -24,7 +24,7 @@ describe('Hourly Nandocas', function ()
             }
             )
 
-            it('Verify Hourly Nandoca Journey', function () {
+            it('Verify playback and accordion', function () {
 
                 cy.get('.first-content-row__RightColumn-sc-95l781-3.bMyXwe > div > button').click() // play video
                 cy.wait(3000) // wait for video to play
@@ -36,7 +36,7 @@ describe('Hourly Nandocas', function ()
             }
             )
 
-            it('Verify Hourly Nandoca Journey', function () {
+            it('Verify locations functions', function () {
 
                 cy.title().should('eq','Locations | Nando\'s Careers') // title verification / home page
                 cy.get('div.intro__CentredDiv-k5zjku-0.djdQRT > div > p').contains('We’re expanding rapidly, with restaurants opening here, there and everywhere. In fact, at our current rate, we are opening a new restaurant every other week. And with over 450 restaurants right across the length and breadth of the UK & Ireland already, plus our Central Support team, you probably don’t have to go as far as you think to start your Nando’s career. Take a look to see our available jobs, what to expect when you step inside one of our restaurants or Central Support, and find an opportunity in your local Nando’s.') // verify team member hero text
@@ -47,7 +47,7 @@ describe('Hourly Nandocas', function ()
             }
             )
 
-            it('Verify Hourly Nandoca Journey', function () {
+            it('Verify Workday button link and url', function () {
 
                 cy.get('div.first-content-row__Wrapper-sc-1sjpuex-0.egRQro > div > a') // verify button has the workday website attribute
                 .should('have.attr', 'href')
