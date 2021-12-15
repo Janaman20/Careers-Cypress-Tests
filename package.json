@@ -1,0 +1,14 @@
+{
+  "name": "cypressrecruitment",
+  "version": "1.0.0",
+  "description": "Project for workday recruitment automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jamie",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.1.1"
+  }
+}
