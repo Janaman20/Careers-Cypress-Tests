@@ -25,18 +25,10 @@ describe('About Us Page', function ()
         }
         )
 
-        
-        it('Verify Nandos history carousel 1997', function () {
-                
-                cy.get('button.flickity-button.flickity-prev-next-button.next > svg').should('be.visible').dblclick() // click continue button
-                cy.get('div.carousel__Slide-sc-5tsd16-1.dLDppT.carousel-slide.is-selected > div > div > h2').contains('1997')
-        }
-        )
-
         it('Verify Nandos history carousel 2020', function () {
 
-        Cypress._.times(6, () => {
-                    cy.get('button.flickity-button.flickity-prev-next-button.next > svg > path').click()
+        Cypress._.times(8, () => {
+                    cy.get('button.flickity-button.flickity-prev-next-button.next > svg > path').click() // click the carousel right side button x 8
 
         }
         )
@@ -47,7 +39,7 @@ describe('About Us Page', function ()
         
         it('Verify Nandos carousel value', function () {
 
-                cy.get('div.carousel__Slide-sc-5tsd16-1.dLDppT.carousel-slide.is-selected > div > div > h2').contains('2020')
+                cy.get('div.carousel__Slide-sc-5tsd16-1.dLDppT.carousel-slide.is-selected > div > div > h2').contains('2020') // verify the year of the carousel after clicks 
 
         }
         )
