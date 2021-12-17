@@ -67,9 +67,9 @@ describe('CV builder page', function ()
             }
             )
 
-            it('Recapcha handling', function () {
+            it('Recapcha handling', function () { // recaptcha handling
 
-                cy.get('iframe') // recaptcha handling
+                cy.get('iframe') 
                     .first()
                     .its('0.contentDocument.body')
                     .should('not.be.undefined')
