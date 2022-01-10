@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
 
-//Verify hero video playback in different resolutions
-//Check top nav and header links
-//Check locations via postcode
+// Verify hero video playback in different resolutions
+// Check top nav and header links
+// Check locations via postcode
+// Verify nandos spotify playlist and playback
 describe('Verify hero video autoplay', () => {
     beforeEach(() => {
         cy.reload() // reload page before each test
@@ -82,7 +83,7 @@ describe('Verify top nav links, buttons and spotify playback', () => {
         cy.get('div.image__StyledDiv-n16yq5-0.bzgYtl.first-content-row__Column-za9o82-1.iBNbKQ > div > a') 
                 .should('have.attr', 'href')
                 .and('include', '/covid-19-recruitment-update/')
-        cy.get('div.image__StyledDiv-n16yq5-0.bzgYtl.first-content-row__Column-za9o82-1.iBNbKQ > div > a') /
+        cy.get('div.image__StyledDiv-n16yq5-0.bzgYtl.first-content-row__Column-za9o82-1.iBNbKQ > div > a') 
                 .should('have.prop', 'href')
                 .and('equal', 'https://preprod.careers.nandos.co.uk/covid-19-recruitment-update/')
         cy.get('div.image__StyledDiv-n16yq5-0.dzjTKp.second-content-row__Column-sc-13x7ft5-1.fOSiPr > div > a') 
@@ -93,12 +94,13 @@ describe('Verify top nav links, buttons and spotify playback', () => {
                 .and('equal', 'https://preprod.careers.nandos.co.uk/why-nandos/')
   })
 
-
   it('Verify locations button', () => {
-
-        cy.get('input[name=search]').should('be.visible').should('be.enabled').type("N41SN") // enter postcode into locations textbox
-        cy.get('button').contains('Search').click() // search for postcode
-        cy.get('div.first-content-row__Wrapper-sc-1sjpuex-0.egRQro > h2').contains('Find Your Role') // verify team member hero text
+    // enter postcode into locations textbox
+    // search for postcode
+    // verify team member hero text
+        cy.get('input[name=search]').should('be.visible').should('be.enabled').type("N41SN") 
+        cy.get('button').contains('Search').click() 
+        cy.get('div.first-content-row__Wrapper-sc-1sjpuex-0.egRQro > h2').contains('Find Your Role') 
   })
 
   it('Go back to homepage to verify Spotify Playlist', () => {
@@ -106,25 +108,18 @@ describe('Verify top nav links, buttons and spotify playback', () => {
     cy.get('iframe')
   })
 
-const getIframeDocument = () => {
+  // get and check spotify in iframe
+  // play and stop embedded media player
+  const getIframeDocument = () => {
     return cy
     .get('iframe[src="https://embed.spotify.com/?uri=spotify:playlist:3tbxcq2GiO7vsIrPI3Qene"]')
-    // Cypress yields jQuery element, which has the real
-    // DOM element under property "0".
-    // From the real DOM iframe element we can get
-    // the "document" element, it is stored in "contentDocument" property
-    // Cypress "its" command can access deep properties using dot notation
-    // https://on.cypress.io/its
     .its('0.contentDocument').should('exist')
   }
   
   const getIframeBody = () => {
     // get the document
     return getIframeDocument()
-    // automatically retries until body is loaded
     .its('body').should('not.be.undefined')
-    // wraps "body" DOM element to allow
-    // chaining more Cypress commands, like ".find(...)"
     .then(cy.wrap)
   }
   
@@ -137,7 +132,6 @@ const getIframeDocument = () => {
     })  
   })
 })
-
 
 const sizes = ['iphone-8', 'ipad-2', 'macbook-16']
 
@@ -155,9 +149,7 @@ describe('Change screen sizes ', () => {
       }
       cy.get('div.hero__SubWrapper-sc-7mvbl5-2.cJJTMe > div > h1').should('be.visible')
     })
-
   })
-
 })
 
 
