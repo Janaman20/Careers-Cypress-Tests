@@ -1,51 +1,51 @@
 /// <reference types="cypress" />
 
+// Verify links on About Us page and carousel functionality and values 
+// Desktop resolution
+
 describe('About Us Page', function ()
     {
-        it('Verify About Us page details', function () {
-
-                cy.visit("https://preprod.careers.nandos.co.uk/about-us/") //visit site
-                cy.url().should('include','careers') //verify url should include 'careers'
-                cy.title().should('eq','About Us | Nando\'s Careers') // title verification / home page
-                // cy.get('#gatsby-focus-wrapper > div > main > div.intro__CentredDiv-k5zjku-0.djdQRT > div > p').contains('Today, there are over 450 Nando’s restaurants in the UK and Ireland, but our story starts long before the first UK restaurants opened here in the West London suburb of Ealing. It’s a story of discovery, passion andambition. It’s an evolving story too, so while we always look back on where we’ve come from with pride, it’s where we’re going next that really gets us excited. Have a read for yourself and see if you agree.') // verify homepage hero text
-                cy.get('div.timeline__StyledHeadingWrapper-sc-1dd8dl1-5.iOgoQW > h2').contains('The history of Nando\'s ') // open team member page                
-         
-        }
-        )
+        it('Verify title and hero text', function () {
+                cy.visit("https://preprod.careers.nandos.co.uk/about-us/")
+                cy.url().should('include','careers') 
+                cy.title().should('eq','About Us | Nando\'s Careers') 
+                cy.get('div.timeline__StyledHeadingWrapper-sc-1dd8dl1-5.iOgoQW > h2')
+                        .contains('The history of Nando\'s ')                
+        })
 
         it('Verify Covid-19 link and url', function () {
-
-                cy.get('div.covid-19-banner__BannerInfo-m0pf6a-1.bEQhyF > a') // verify button has the workday website attribute
+                // verify button has the workday website attribute
+                // verify the covid-19 url 
+                cy.get('div.covid-19-banner__BannerInfo-m0pf6a-1.bEQhyF > a') 
                 .should('have.attr', 'href')
                 .and('include', '/covid-19-recruitment-update')
-          
-                cy.get('div > main > div.covid-19-banner__CentredDiv-m0pf6a-0.gYRnVK > div.covid-19-banner__BannerInfoMobile-m0pf6a-2.exHzla > a') // verify the covid-19 url 
+                cy.get('div > main > div.covid-19-banner__CentredDiv-m0pf6a-0.gYRnVK > div.covid-19-banner__BannerInfoMobile-m0pf6a-2.exHzla > a') 
                 .should('have.prop', 'href')
                 .and('equal', 'https://preprod.careers.nandos.co.uk/covid-19-recruitment-update')
-        }
-        )
+        })
 
-        it('Verify Nandos history carousel 2020', function () {
-
-        Cypress._.times(8, () => {
-                    cy.get('button.flickity-button.flickity-prev-next-button.next > svg > path').click() // click the carousel right side button x 8
-
-        }
-        )
-
-        }
-        )
-
+        it('Verify clicking history carousel 8 times ', function () {
+                // click the carousel right side button x 8
+                Cypress._.times(8, () => {
+                cy.get('button.flickity-button.flickity-prev-next-button.next > svg > path').click() 
+                })
+        })
         
-        it('Verify Nandos carousel value', function () {
-
-                cy.get('div.carousel__Slide-sc-5tsd16-1.dLDppT.carousel-slide.is-selected > div > div > h2').contains('2020') // verify the year of the carousel after clicks 
-
-        }
-        )
+        it('Verify Nandos carousel year', function () {
+                // verify the year of the carousel after clicks 
+                cy.get('div.carousel__Slide-sc-5tsd16-1.dLDppT.carousel-slide.is-selected > div > div > h2')
+                        .contains('2020') 
+                })
         
-
-        
-        }
-        )
+        it('Verify Apply Now button and link', function () {
+                // verify button has the workday website attribute
+                // verify the workday url 
+                cy.get('#gatsby-focus-wrapper > div > a') 
+                .should('have.attr', 'href')
+                .and('include', 'https://nandos.wd3.myworkdayjobs.com/Nandos')
+                cy.get('#gatsby-focus-wrapper > div > a') 
+                .should('have.prop', 'href')
+                .and('equal', 'https://nandos.wd3.myworkdayjobs.com/Nandos')
+                })
+        })
 
