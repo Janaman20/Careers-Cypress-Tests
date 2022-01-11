@@ -13,7 +13,8 @@ describe('Roles Page', function ()
             })
          
         it('Verify Team Member button link', function () {
-                cy.get('div.image__StyledDiv-n16yq5-0.kjyqsV.roles-list__StyledImage-vmk9m2-1.cIYene > a') 
+                cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(1)') // verify off hover/unhighlighted state
+                cy.get('div.image__StyledDiv-n16yq5-0.kjyqsV.roles-list__StyledImage-vmk9m2-1.cIYene > a') // verify highlighted on hover/highlighted
                 .should('have.attr', 'href')
                 .and('include', '/roles/team-member/')
                 cy.get('div.image__StyledDiv-n16yq5-0.kjyqsV.roles-list__StyledImage-vmk9m2-1.cIYene > a') 
@@ -61,8 +62,8 @@ describe('Roles Page', function ()
             // TOP NAV LINKS
             it('Team Member top nav button link', function () {
                 cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(1)') 
+                .should('have.attr', 'href')
                 .and('include', '/roles/team-member/')
-          
                 cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(1)') 
                 .should('have.prop', 'href')
                 .and('equal', 'https://preprod.careers.nandos.co.uk/roles/team-member/')
@@ -70,12 +71,12 @@ describe('Roles Page', function ()
 
 
             it('Assistant Manager top nav button link', function () {
-                cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(1)') 
+                cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(2)') 
                 .should('have.attr', 'href')
-                .and('include', '/roles/team-member/')
-                cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(1)') 
+                .and('include', '/roles/assistant-manager/')
+                cy.get('div.roles-nav__Wrapper-sc-1rtx759-0.elhFOG > a:nth-child(2)') 
                 .should('have.prop', 'href')
-                .and('equal', 'https://preprod.careers.nandos.co.uk/roles/team-member/')
+                .and('equal', 'https://preprod.careers.nandos.co.uk/roles/assistant-manager/')
             })
 
             it('General Manager top nav button link', function () {

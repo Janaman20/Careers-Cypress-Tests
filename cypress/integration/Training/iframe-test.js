@@ -32,5 +32,5 @@ const getIframeDocument = () => {
     getIframeBody().find("[title='Play']").should('have.text', 'Play').click()
     cy.wait(3000)
     getIframeBody().find("[title='Pause']").should('have.text', 'Pause').click()
-    // getIframeBody().find('#result').should('include.text', '"delectus aut autem"')
+   
   })  
