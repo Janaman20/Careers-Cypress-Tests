@@ -6,7 +6,8 @@
 describe('About Us Page', function ()
     {
         it('Verify title and hero text', function () {
-                cy.visit("https://preprod.careers.nandos.co.uk/about-us/")
+                cy.visit("https://careers.nandos.co.uk/about-us/")
+                // cy.get('#truste-consent-button').click({ timeout: 10000 })
                 cy.url().should('include','careers') 
                 cy.title().should('eq','About Us | Nando\'s Careers') 
                 cy.get('div.timeline__StyledHeadingWrapper-sc-1dd8dl1-5.iOgoQW > h2')
@@ -21,7 +22,7 @@ describe('About Us Page', function ()
                 .and('include', '/covid-19-recruitment-update')
                 cy.get('div > main > div.covid-19-banner__CentredDiv-m0pf6a-0.gYRnVK > div.covid-19-banner__BannerInfoMobile-m0pf6a-2.exHzla > a') 
                 .should('have.prop', 'href')
-                .and('equal', 'https://preprod.careers.nandos.co.uk/covid-19-recruitment-update')
+                .and('equal', 'https://careers.nandos.co.uk/covid-19-recruitment-update')
         })
 
         it('Verify clicking history carousel 8 times ', function () {

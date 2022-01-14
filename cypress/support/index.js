@@ -16,5 +16,19 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// likely want to do this in a support file
+// so it's applied to all spec files
+// cypress/support/index.js
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // we expect a 3rd party library error with message 'list not defined'
+    // and don't want to fail the test so we return false
+    if (err.message.includes('Cannot read properties of undefined')) {
+      return false
+    }
+    // we still want to ensure there are no other unexpected
+    // errors, so we let them fail the test
+  })

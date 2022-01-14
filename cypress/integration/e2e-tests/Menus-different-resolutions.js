@@ -12,7 +12,7 @@ describe('Top nav menu visibility when changing resolution', () => {
       it('displays full lower nav', () => {
         // verify lower nav menu is visible in laptop resolution
         // verify mobile menu is hidden
-        cy.visit('https://preprod.careers.nandos.co.uk/')
+        cy.visit('https://careers.nandos.co.uk/')
         cy.get('nav.lower-nav__Wrapper-sc-1r1ns03-0.cKUhPc').should('be.visible')
         cy.get("[title='View the main menu']").should('not.be.visible')
       })
@@ -51,7 +51,7 @@ describe('Top nav menu visibility when changing resolution', () => {
       it('Display mobile menu and click link', () => {
         // repeat last test but click on 'work' from mobile menu
         // verify careers homepage has loaded
-        cy.visit('https://preprod.careers.nandos.co.uk/')
+        cy.visit('https://careers.nandos.co.uk/')
         cy.get('nav.lower-nav__Wrapper-sc-1r1ns03-0.cKUhPc').should('not.be.visible')
         cy.get("[title='View the main menu']").should('be.visible').click()
         cy.get('div.mobile-menu__LinksContainer-atmg69-0.bnaCKj').should('be.visible')

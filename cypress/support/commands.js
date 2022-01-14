@@ -7,3 +7,5 @@ Cypress.Commands.add("clickRecaptcha", () => {
         .click();
     });
   });
+
+  import 'cypress-file-upload';

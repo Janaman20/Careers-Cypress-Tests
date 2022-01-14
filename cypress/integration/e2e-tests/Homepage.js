@@ -10,7 +10,9 @@ describe('Verify hero video autoplay', () => {
         cy.log('I run before every test in every spec file!')
       })
       it('Hero video unpaused on macbook', () => { // verify hero video is played when screen is in laptop resolution
-        cy.visit('https://preprod.careers.nandos.co.uk/')
+        cy.visit('https://careers.nandos.co.uk/')
+        // cy.waitFor(5000)
+        // cy.get('button').contains('Accept All Cookies').click()
         cy.viewport('macbook-16') 
         cy.get('video')
           .should('have.prop', 'paused', false)
@@ -85,13 +87,13 @@ describe('Verify top nav links, buttons and spotify playback', () => {
                 .and('include', '/covid-19-recruitment-update/')
         cy.get('div.image__StyledDiv-n16yq5-0.bzgYtl.first-content-row__Column-za9o82-1.iBNbKQ > div > a') 
                 .should('have.prop', 'href')
-                .and('equal', 'https://preprod.careers.nandos.co.uk/covid-19-recruitment-update/')
+                .and('equal', 'https://careers.nandos.co.uk/covid-19-recruitment-update/')
         cy.get('div.image__StyledDiv-n16yq5-0.dzjTKp.second-content-row__Column-sc-13x7ft5-1.fOSiPr > div > a') 
                 .should('have.attr', 'href')
                 .and('include', '/why-nandos/')
         cy.get('div.image__StyledDiv-n16yq5-0.dzjTKp.second-content-row__Column-sc-13x7ft5-1.fOSiPr > div > a') 
                 .should('have.prop', 'href')
-                .and('equal', 'https://preprod.careers.nandos.co.uk/why-nandos/')
+                .and('equal', 'https://careers.nandos.co.uk/why-nandos/')
   })
 
   it('Verify locations button', () => {
@@ -104,7 +106,7 @@ describe('Verify top nav links, buttons and spotify playback', () => {
   })
 
   it('Go back to homepage to verify Spotify Playlist', () => {
-    cy.visit('https://preprod.careers.nandos.co.uk/').contains('Work at Nando\'s')
+    cy.visit('https://careers.nandos.co.uk/').contains('Work at Nando\'s')
     cy.get('iframe')
   })
 
@@ -124,7 +126,7 @@ describe('Verify top nav links, buttons and spotify playback', () => {
   }
   
   it('Play/Pause Spotify playlist', () => {
-    cy.visit('https://preprod.careers.nandos.co.uk/')
+    cy.visit('https://careers.nandos.co.uk/')
     getIframeBody().find("[title='Play']").should('have.text', 'Play').click()
     cy.wait(1500)
     getIframeBody().find("[title='Pause']").should('have.text', 'Pause').click()
@@ -136,8 +138,6 @@ describe('Verify top nav links, buttons and spotify playback', () => {
 const sizes = ['iphone-8', 'ipad-2', 'macbook-16']
 
 describe('Change screen sizes ', () => {
-  it(`Check for title name in each screen size`, () => {
-  })
   sizes.forEach((size) => {
     // make assertions on the title using
     // an array of different viewports

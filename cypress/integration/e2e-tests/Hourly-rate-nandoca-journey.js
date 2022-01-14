@@ -5,13 +5,18 @@
 describe('Hourly Nandocas', function ()
     {
         it('Verify homepage url, title and hero text', function () {
-                cy.visit("https://preprod.careers.nandos.co.uk/") 
+                cy.visit("https://careers.nandos.co.uk/")
+                cy.clock()
+                // cy.get('#truste-consent-button').click() 
+                cy.clock().then((clock) => {
+                clock.tick(500)
+                })
                 cy.url().should('include','careers') 
                 cy.title().should('eq','Home | Nando\'s Careers') 
                 cy.get('.hero__SubWrapper-sc-7mvbl5-2.cJJTMe')
                     .contains("Heart and soul. Passion and personality. You may know us as the home of PERi-PERi goodness, but we like to think of ourselves as more than that. At Nando’s, it’s the people that make the chicken.") // verify homepage hero text
             })
-                
+
         it('Verify Team Member page', function () {
                 cy.get('.button__BottomHalf-oyjxxm-2.jTtRLh.button-cta').contains('Team Member').click() /               
                 cy.waitFor(5000)

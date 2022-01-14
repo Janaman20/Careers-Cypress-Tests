@@ -7,7 +7,9 @@
 describe('CV builder page', function ()
     {
         it('Verify CV creation and submission', function () {
-                cy.visit("https://preprod.careers.nandos.co.uk/cv-builder/") 
+                cy.visit("https://careers.nandos.co.uk/cv-builder/") 
+                // cy.waitFor(5000)
+                // cy.get('button').contains('Accept All Cookies').click()
                 cy.url().should('include','cv-builder')
                 cy.title().should('eq','CV builder | Nando\'s Careers') 
             })
