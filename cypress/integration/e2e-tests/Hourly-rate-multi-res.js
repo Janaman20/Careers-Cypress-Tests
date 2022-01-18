@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 // run the hourly nandoca journey in different screen resolution
 const sizes = ['iphone-8', 'ipad-2', 'macbook-16']
 

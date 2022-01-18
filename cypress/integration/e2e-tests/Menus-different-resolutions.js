@@ -1,6 +1,4 @@
 /// <reference types="cypress" />
-
-
 describe('Top nav menu visibility when changing resolution', () => {
     context('macbook-16 resolution', () => {
       beforeEach(() => {

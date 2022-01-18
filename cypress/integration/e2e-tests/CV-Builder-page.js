@@ -1,9 +1,7 @@
 /// <reference types="cypress" />
-
 // Create CV using template
 // Submit the CV
 // Need to negociate recapcha images
-
 describe('CV builder page', function ()
     {
         it('Verify CV creation and submission', function () {

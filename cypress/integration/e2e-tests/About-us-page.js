@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
-
 // Verify links on About Us page and carousel functionality and values 
 // Desktop resolution
-
 describe('About Us Page', function ()
     {
         it('Verify title and hero text', function () {

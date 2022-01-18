@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 // Verify hero video playback in different resolutions
 // Check top nav and header links
 // Check locations via postcode

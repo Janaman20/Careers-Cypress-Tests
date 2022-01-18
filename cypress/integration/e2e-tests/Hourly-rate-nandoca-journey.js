@@ -1,16 +1,10 @@
 /// <reference types="cypress" />
-
 // E2E test of hourly nandoca job app journey to WD
 // Based on flow here: https://www.figma.com/file/N8h0GcgwDF75lHkq9ORc7J/Nandos-Careers-Websire?node-id=0%3A1 
 describe('Hourly Nandocas', function ()
     {
         it('Verify homepage url, title and hero text', function () {
                 cy.visit("https://careers.nandos.co.uk/")
-                cy.clock()
-                // cy.get('#truste-consent-button').click() 
-                cy.clock().then((clock) => {
-                clock.tick(500)
-                })
                 cy.url().should('include','careers') 
                 cy.title().should('eq','Home | Nando\'s Careers') 
                 cy.get('.hero__SubWrapper-sc-7mvbl5-2.cJJTMe')
