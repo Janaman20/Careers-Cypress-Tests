@@ -5,7 +5,8 @@ These smoke tests for the Nandos careers website are a POC for Cypress as a test
 
 ## Running the tests
 
-1. run `yarn run cypress open` or `./node_modules/.bin/cypress` to open Cypress
+1. cd into Cypress automation
+1. run `yarn run cypress open` or `./node_modules/.bin/cypress open` to open Cypress
 1. click on a test to run it
 1. run 'yarn cypress run, from command line to run all tests headlessly
 1. run `npm run cy:run  -- --spec "cypress/integration/e2e-tests/<test>"` to run a specific test headlessly
