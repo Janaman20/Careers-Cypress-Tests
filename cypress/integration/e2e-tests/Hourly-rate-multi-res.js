@@ -6,7 +6,7 @@ describe('Change screen sizes ', () => {
   sizes.forEach((size) => {
     // make assertions on the title using
     // an array of different viewports
-    it(`Should display page title on ${size} screen`, () => {
+    it(`Should display hourly nandoca journey on ${size} screen`, () => {
       if (Cypress._.isArray(size)) {
         cy.viewport(size[0], size[1])
       } else {
