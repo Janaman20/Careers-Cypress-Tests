@@ -18,54 +18,44 @@ describe('Verify hero video autoplay', () => {
           .and('have.prop', 'ended', false)
       })
 
-    it('Hero video paused on mobile', () => { // verify video is paused when screen is in mobile device resolution
+    it('Hero video unpaused on mobile', () => { // verify video is paused when screen is in mobile device resolution
         cy.viewport('iphone-xr')  
         cy.get('video')
-          .should('have.prop', 'paused', false) // verify video is playing (only set to false in cypress chrome!)
-          .and('have.prop', 'ended', false)
+              .should('have.prop', 'paused', false) // verify video is playing (only set to false in cypress chrome!)
+              .and('have.prop', 'ended', false)
         .then(($video) => { // pause video (video is paused when viewing property in browser)
           $video[0].pause()
         })
-        .should('have.prop', 'paused', true) // verify video is paused
-          .and('have.prop', 'ended', false)
+              .should('have.prop', 'paused', true) // verify video is paused
+              .and('have.prop', 'ended', false)
       })
 
 describe('Verify top nav links, buttons and spotify playback', () => {
   it('Verify top nav links', () => {
         cy.get('div.header__HeaderWrapper-l12a6r-0.dGOynw > nav.upper-nav__Wrapper-sc-1mfmr-0.dCDUCv > a') 
-                .should('have.attr', 'href')
-                .and('include', 'nandos.co.uk')
+              .should('have.attr', 'href')
+              .and('include', 'nandos.co.uk')
         cy.get('div.header__HeaderWrapper-l12a6r-0.dGOynw > nav.upper-nav__Wrapper-sc-1mfmr-0.dCDUCv > a') 
-                .should('have.prop', 'href')
-                .and('equal', 'https://nandos.co.uk/')
+              .should('have.prop', 'href')
+               .and('equal', 'https://nandos.co.uk/')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(1)') 
-                .should('have.attr', 'href')
-                .and('include', 'https://nandos.co.uk/eat')
+              .should('have.attr', 'href')
+              .and('include', 'https://nandos.co.uk/eat')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(1)') 
-                .should('have.prop', 'href')
-                .and('equal', 'https://nandos.co.uk/eat')
+              .should('have.prop', 'href')
+              .and('equal', 'https://nandos.co.uk/eat')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(2)') 
-                .should('have.attr', 'href')
-                .and('include', 'https://nandos.co.uk/explore')
+              .should('have.attr', 'href')
+              .and('include', 'https://nandos.co.uk/explore')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(2)')
-                .should('have.prop', 'href')
-                .and('equal', 'https://nandos.co.uk/explore')
+              .should('have.prop', 'href')
+               .and('equal', 'https://nandos.co.uk/explore')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(2)') 
-                .should('have.attr', 'href')
+               .should('have.attr', 'href')
                 .and('include', 'https://nandos.co.uk/explore')
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(2)') 
                 .should('have.prop', 'href')
                 .and('equal', 'https://nandos.co.uk/explore')
-
-        // cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a.upper-nav__Link-sc-1mfmr-4.khqDJ') // verify WORK link href in top nav ****
-        //         // .should('have.attr', 'href')
-        //         .should('include', 'https://preprod.careers.nandos.co.uk/')
-
-        // cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a.upper-nav__Link-sc-1mfmr-4.khqDJ') // verify WORK url ****
-        //         .should('have.prop', 'href')
-        //         .and('equal', 'https://preprod.careers.nandos.co.uk/')
-
-        //top nav links
         cy.get('div.upper-nav__LinksContainer-sc-1mfmr-3.laiGFo > a:nth-child(4)') // verify ABOUT link href in top nav 
                 .should('have.attr', 'href')
                 .and('include', 'https://nandos.co.uk/card/about')
