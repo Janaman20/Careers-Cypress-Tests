@@ -1,5 +1,5 @@
 # Careers-Cypress-Tests
-cypress tests for careers website
+Cypress tests for careers website
 
 These smoke tests for the Nandos careers website are a POC for Cypress as a test framework. 
 
