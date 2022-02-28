@@ -15,8 +15,9 @@ The Percy project https://percy.io/e88796f7/Demo-careers-ja/settings
 2. run `npx percy exec -- cypress run --spec "cypress/integration/e2e-tests/<test>"` to run a percy test 
 3. to run percy, you can set environment variables locally using export:
 
-$ export PERCY_TOKEN=aaabbbcccdddeeefff
-$ export PERCY_BRANCH=local
+`$ export PERCY_TOKEN=aaabbbcccdddeeefff`
+
+`$ export PERCY_BRANCH=local`
 
 ## Switching browsers
 
