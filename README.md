@@ -2,6 +2,7 @@
 Cypress tests for careers website
 
 These smoke tests for the Nandos careers website are a POC for Cypress as a test framework. 
+
 The Percy project https://percy.io/e88796f7/Demo-careers-ja/settings 
 
 ## Running the tests
